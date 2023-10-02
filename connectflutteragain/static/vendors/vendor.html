@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Portal</title>
+</head>
+<body>
+    <h1>Welcome to the Vendor Portal</h1>
+    <p>Already have an account? <a href="{% url 'vendor_login' %}">Login here</a></p>
+    <h2>Register as a Vendor</h2>
+    <form method="post" enctype="multipart/form-data" action="{% url 'vendor_registration' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
